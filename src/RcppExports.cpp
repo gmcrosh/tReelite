@@ -6,18 +6,19 @@
 using namespace Rcpp;
 
 // treelite_test
-int treelite_test();
-RcppExport SEXP _tReelite_treelite_test() {
+int treelite_test(Rcpp::String path);
+RcppExport SEXP _tReelite_treelite_test(SEXP pathSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(treelite_test());
+    Rcpp::traits::input_parameter< Rcpp::String >::type path(pathSEXP);
+    rcpp_result_gen = Rcpp::wrap(treelite_test(path));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_tReelite_treelite_test", (DL_FUNC) &_tReelite_treelite_test, 0},
+    {"_tReelite_treelite_test", (DL_FUNC) &_tReelite_treelite_test, 1},
     {NULL, NULL, 0}
 };
 
