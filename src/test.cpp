@@ -18,7 +18,9 @@ extern "C" {
 // [[Rcpp::export]]
 int treelite_test(Rcpp::String path) {
   int x;
+  std::string cpath;
+  cpath = std::string(path);
   ModelHandle Lmodel;
-  x = TreeliteLoadLightGBMModel(path, &Lmodel);
+  x = TreeliteLoadLightGBMModel(cpath.c_str(), &Lmodel);
   return x;
 }
