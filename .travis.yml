@@ -9,8 +9,6 @@ addons:
     packages:
     - cmake
     - g++
-    - libboost-all-dev
-    - ragel
 
 before_install:
   - ./install-treelite.sh
